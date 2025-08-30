@@ -1,76 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Laia Mind — Yoga & Bem‑estar</title>
+  <title>Laia Mind</title>
+  <meta name="description" content="Yoga, meditação e respiração.">
+  <link rel="icon" href="assets/icons/icon-sphere-64.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-sphere-128.png">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <strong>Laia Mind</strong>
-      <nav style="display:flex;gap:10px">
-        <a class="btn" href="#agenda">Agenda</a>
-        <a class="btn" href="#servicos">Serviços</a>
-        <a class="btn" href="#contato">Contato</a>
-      </nav>
-    </div>
-  </header>
+<header class="topbar">
+  <a href="#home" class="brand"><img id="brandMark" src="assets/icons/icon-sphere-32.png" alt="">Laia Mind</a>
+  <nav class="nav">
+    <a href="#agenda" data-i18n="nav.agenda"></a>
+    <a href="#servicos" data-i18n="nav.servicos"></a>
+    <a href="#contato" data-i18n="nav.contato"></a>
+  </nav>
+  <div class="lang">
+    <button data-lang="pt" class="active">PT</button>
+    <button data-lang="es">ES</button>
+    <button data-lang="en">EN</button>
+  </div>
+</header>
 
-  <main>
-    <section class="container hero">
+<main id="home" class="hero">
+  <div class="content wrap">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img id="heroLogo" src="assets/icons/icon-sphere-256.png" alt="Logo" class="brand-icon">
       <div>
-        <div class="profile"><img src="assets/img/pfp.svg" alt="Foto de perfil"><div><strong>Gabi Barbosa</strong><div class="small">Yoga • Meditação • Respiração</div></div></div>
-        <h1>Respire. Movimente. Integre.</h1>
-        <p>Práticas de yoga e meditação para aumentar foco, reduzir estresse e cultivar presença — online e presenciais.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="#agenda">Ver agenda</a>
-          <a class="btn" href="#servicos">Planos & Pacotes</a>
-        </div>
+        <div style="font-weight:700">Gabi Barbosa</div>
+        <div class="lead">Yoga · Meditação · Respiração</div>
       </div>
-      <div><img src="assets/img/hero.svg" alt="Imagem de destaque"></div>
-    </section>
+    </div>
+    <h1 data-i18n="hero.title"></h1>
+    <p class="lead" data-i18n="hero.lead"></p>
+    <div class="cta-row">
+      <a class="cta primary" href="#agenda" data-i18n="hero.cta1"></a>
+      <a class="cta" href="#servicos" data-i18n="hero.cta2"></a>
+    </div>
+  </div>
+</main>
 
-    <section class="container section">
-      <h2>Galeria</h2>
-      <div class="gallery">
-        <img src="assets/img/gallery/yoga-1.svg" alt="Yoga 1">
-        <img src="assets/img/gallery/yoga-2.svg" alt="Yoga 2">
-        <img src="assets/img/gallery/yoga-3.svg" alt="Yoga 3">
-        <img src="assets/img/gallery/yoga-4.svg" alt="Yoga 4">
+<section id="agenda" class="section">
+  <div class="wrap">
+    <div class="h2" data-i18n="agenda.title"></div>
+    <div class="card">
+      <table class="table">
+        <tr><th>Seg</th><td>18:00 · Grupo online</td></tr>
+        <tr><th>Ter</th><td>—</td></tr>
+        <tr><th>Qua</th><td>19:30 · 1:1 presencial</td></tr>
+        <tr><th>Qui</th><td>08:00 · 1:1 online</td></tr>
+        <tr><th>Sex</th><td>—</td></tr>
+      </table>
+      <p class="lead" data-i18n="agenda.note"></p>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="section">
+  <div class="wrap">
+    <div class="h2" data-i18n="servicos.title"></div>
+    <div class="list">
+      <div class="card">
+        <div style="font-weight:700" data-i18n="servicos.g.title"></div>
+        <div class="lead" data-i18n="servicos.g.desc"></div>
+        <div class="price" data-i18n="servicos.g.price"></div>
       </div>
-      <p class="small">Para usar suas fotos, substitua os arquivos em <code>assets/img/pfp.svg</code>, <code>assets/img/hero.svg</code> e <code>assets/img/gallery/*</code> por .jpg/.png com o mesmo nome.</p>
-    </section>
-
-    <section id="agenda" class="container section">
-      <h2>Agenda</h2>
-      <div class="schedule"></div>
-    </section>
-
-    <section id="servicos" class="container section">
-      <h2>Serviços</h2>
-      <div class="grid">
-        <div class="card"><h3>Aula em grupo (online)</h3><p class="small">Sessões semanais • Zoom</p><p>ARS 6.000 / aula</p></div>
-        <div class="card"><h3>Particular 1:1</h3><p class="small">Plano personalizado • Respiração • Alongamento</p><p>ARS 18.000 / sessão</p></div>
-        <div class="card"><h3>Programa 4 semanas</h3><p class="small">2x por semana + acompanhamento</p><p>ARS 120.000</p></div>
+      <div class="card">
+        <div style="font-weight:700" data-i18n="servicos.p.title"></div>
+        <div class="lead" data-i18n="servicos.p.desc"></div>
+        <div class="price" data-i18n="servicos.p.price"></div>
       </div>
-    </section>
-
-    <section id="contato" class="container section">
-      <h2>Contato</h2>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn primary" href="https://wa.me/5493412280994" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn" href="mailto:mind@universolaia.com">mind@universolaia.com</a>
+      <div class="card">
+        <div style="font-weight:700" data-i18n="servicos.prog.title"></div>
+        <div class="lead" data-i18n="servicos.prog.desc"></div>
+        <div class="price" data-i18n="servicos.prog.price"></div>
       </div>
-      <p class="small">Marque uma sessão experimental. Ajusto horários conforme sua rotina.</p>
-    </section>
-  </main>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <div class="container" style="color:#a8cbb9">© 2025 Laia Mind — Universo Laia</div>
-  </footer>
+<section id="contato" class="section">
+  <div class="wrap">
+    <div class="h2" data-i18n="contato.title"></div>
+    <div class="quick">
+      <a class="cta primary" href="https://wa.me/0000000000" target="_blank" rel="noopener"><img src="assets/icons/icon-sphere-32.png" alt=""><span data-i18n="contato.wa"></span></a>
+      <a class="cta" href="mailto:mind@universolaia.com"><img src="assets/icons/icon-sphere-32.png" alt=""><span data-i18n="contato.email"></span></a>
+    </div>
+    <p class="lead" data-i18n="contato.cta"></p>
+  </div>
+</section>
 
-  <script src="assets/js/app.js"></script>
+<section id="galeria" class="section">
+  <div class="wrap">
+    <div class="h2" data-i18n="galeria.title"></div>
+    <div class="gallery">
+      <div class="item">Yoga 1</div>
+      <div class="item">Yoga 2</div>
+      <div class="item">Yoga 3</div>
+      <div class="item">Yoga 4</div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  © 2025 Laia Mind — Universo Laia
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
