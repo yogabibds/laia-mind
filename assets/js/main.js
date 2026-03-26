@@ -1,40 +1,94 @@
 const STRINGS = {
-  pt:{
-    nav:{home:"Laia Mind",agenda:"Agenda",servicos:"Serviços",contato:"Contato"},
-    hero:{title:"Respire. Movimente. Integre.",lead:"Práticas de yoga e meditação para aumentar foco, reduzir estresse e cultivar presença — online e presenciais." ,cta1:"Ver agenda",cta2:"Planos & Pacotes"},
-    agenda:{title:"Agenda",note:"Exemplo de agenda semanal. Substitua por seu calendário."},
-    servicos:{title:"Serviços",g:{title:"Aula em grupo (online)",desc:"Sessões semanais · Zoom",price:"ARS 6.000 / aula"},p:{title:"Particular 1:1",desc:"Plano personalizado · Respiração · Alongamento",price:"ARS 18.000 / sessão"},prog:{title:"Programa 4 semanas",desc:"2x por semana + acompanhamento",price:"ARS 120.000"}},
-    contato:{title:"Contato",cta:"Marque uma sessão experimental. Ajusto horários conforme sua rotina.",wa:"WhatsApp",email:"E-mail"},
-    galeria:{title:"Galeria"}
+  pt: {
+    nav_agenda: "Agenda",
+    nav_services: "Serviços",
+    nav_contact: "Contato",
+    hero_title: "Respire. Movimente. Integre.",
+    hero_sub: "Práticas de yoga e meditação para aumentar foco, reduzir estresse e cultivar presença — online e presenciais.",
+    hero_cta1: "Ver agenda",
+    hero_cta2: "Planos & Pacotes",
+    gallery_title: "Galeria",
+    gallery_note: "Substitua os arquivos SVG por suas fotos reais.",
+    agenda_title: "Agenda",
+    services_title: "Serviços",
+    contact_title: "Contato",
+    contact_note: "Marque uma sessão experimental. Ajusto horários conforme sua rotina.",
+    footer: "© 2026 Laia Mind — Universo Laia"
   },
-  es:{
-    nav:{home:"Laia Mind",agenda:"Agenda",servicos:"Servicios",contato:"Contacto"},
-    hero:{title:"Respira. Muévete. Integra.",lead:"Prácticas de yoga y meditación para foco, menos estrés y más presencia — online y presenciales.",cta1:"Ver agenda",cta2:"Planes y Paquetes"},
-    agenda:{title:"Agenda",note:"Ejemplo de agenda semanal. Sustituye con tu calendario."},
-    servicos:{title:"Servicios",g:{title:"Clase grupal (online)",desc:"Sesiones semanales · Zoom",price:"ARS 6.000 / clase"},p:{title:"Particular 1:1",desc:"Plan personalizado · Respiración · Estiramiento",price:"ARS 18.000 / sesión"},prog:{title:"Programa 4 semanas",desc:"2x por semana + acompañamiento",price:"ARS 120.000"}},
-    contato:{title:"Contacto",cta:"Reserva una sesión experimental. Ajusto horarios según tu rutina.",wa:"WhatsApp",email:"Correo"},
-    galeria:{title:"Galería"}
+  es: {
+    nav_agenda: "Agenda",
+    nav_services: "Servicios",
+    nav_contact: "Contacto",
+    hero_title: "Respira. Muévete. Integra.",
+    hero_sub: "Prácticas de yoga e meditación para foco, menos estrés y más presencia — online y presenciales.",
+    hero_cta1: "Ver agenda",
+    hero_cta2: "Planes y Paquetes",
+    gallery_title: "Galería",
+    gallery_note: "Sustituye los archivos SVG por tus fotos reales.",
+    agenda_title: "Agenda",
+    services_title: "Servicios",
+    contact_title: "Contacto",
+    contact_note: "Reserva una sesión experimental. Ajusto horarios según tu rutina.",
+    footer: "© 2026 Laia Mind — Universo Laia"
   },
-  en:{
-    nav:{home:"Laia Mind",agenda:"Schedule",servicos:"Services",contato:"Contact"},
-    hero:{title:"Breathe. Move. Integrate.",lead:"Yoga and meditation to increase focus, reduce stress and cultivate presence — online and in person.",cta1:"See schedule",cta2:"Plans & Packages"},
-    agenda:{title:"Schedule",note:"Weekly example. Replace with your calendar."},
-    servicos:{title:"Services",g:{title:"Group class (online)",desc:"Weekly sessions · Zoom",price:"ARS 6,000 / class"},p:{title:"1:1 Private",desc:"Personalized plan · Breath · Stretching",price:"ARS 18,000 / session"},prog:{title:"4-week program",desc:"2x per week + follow-up",price:"ARS 120,000"}},
-    contato:{title:"Contact",cta:"Book a trial session. I adapt to your routine.",wa:"WhatsApp",email:"Email"},
-    galeria:{title:"Gallery"}
+  en: {
+    nav_agenda: "Schedule",
+    nav_services: "Services",
+    nav_contact: "Contact",
+    hero_title: "Breathe. Move. Integrate.",
+    hero_sub: "Yoga and meditation to increase focus, reduce stress and cultivate presence — online and in person.",
+    hero_cta1: "See schedule",
+    hero_cta2: "Plans & Packages",
+    gallery_title: "Gallery",
+    gallery_note: "Replace SVG files with your real photos.",
+    agenda_title: "Schedule",
+    services_title: "Services",
+    contact_title: "Contact",
+    contact_note: "Book a trial session. I adapt to your routine.",
+    footer: "© 2026 Laia Mind — Universo Laia"
   }
 };
 
-const html=document.documentElement;
-function t(path){
-  const dict=STRINGS[html.lang]||STRINGS.pt;
-  return path.split('.').reduce((o,k)=>o&&o[k], dict) || path;
-}
-function applyLang(l){html.lang=l;document.querySelectorAll('[data-i18n]').forEach(n=>n.textContent=t(n.dataset.i18n));}
-document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('active'));b.classList.add('active');applyLang(b.dataset.lang)});
-applyLang('pt');
+// Função para aplicar o idioma
+function applyLang(lang) {
+  // Define o atributo lang no HTML (bom para SEO)
+  document.documentElement.lang = lang;
+  
+  // Busca todos os elementos que tenham o atributo data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (STRINGS[lang] && STRINGS[lang][key]) {
+      el.textContent = STRINGS[lang][key];
+    }
+  });
 
-// logo toggle via ?logo=mandala
+  // Atualiza a classe 'active' nos botões de troca de idioma
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    if (btn.getAttribute('data-lang') === lang) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  
+  // Opcional: Salva a preferência do usuário no navegador
+  localStorage.setItem('preferredLang', lang);
+}
+
+// Configura os cliques nos botões de idioma
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const selectedLang = btn.getAttribute('data-lang');
+    applyLang(selectedLang);
+  });
+});
+
+// Inicialização ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+  // Tenta recuperar idioma salvo ou usa PT como padrão
+  const savedLang = localStorage.getItem('preferredLang') || 'pt';
+  applyLang(savedLang);
+});// logo toggle via ?logo=mandala
 const params = new URLSearchParams(location.search);
 if(params.get('logo')==='mandala'){
   document.getElementById('brandMark').src='assets/logo/logo-mandala-64.png';
