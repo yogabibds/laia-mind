@@ -56,6 +56,61 @@ const STRINGS = {
 };
 
 function applyLang(lang) {
+  // 1. Atualiza o atributo lang
+  document.documentElement.lang = lang;
+  
+  // 2. Traduz todos os elementos com data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (STRINGS[lang] && STRINGS[lang][key]) {
+      el.textContent = STRINGS[lang][key];
+    }
+  });
+
+  // 3. Atualiza os botões ativos
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+
+  // 4. Salva a escolha
+  localStorage.setItem('preferredLang', lang);
+}
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', () => {
+  // Configura os botões de clique
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyLang(btn.getAttribute('data-lang'));
+    });
+  });
+
+  // Aplica o idioma salvo ou padrão
+  const savedLang = localStorage.getItem('preferredLang') || 'pt';
+  applyLang(savedLang);
+});
+  },
+  en: {
+    nav_agenda: "Schedule",
+    nav_services: "Services",
+    nav_contact: "Contact",
+    hero_title: "Breathe. Move. Integrate.",
+    hero_sub: "Yoga and meditation to increase focus, reduce stress and cultivate presence — online and in person.",
+    hero_cta1: "See schedule",
+    hero_cta2: "Plans & Packages",
+    gallery_title: "Gallery",
+    services_title: "Services",
+    svc_g_title: "Group Class",
+    svc_g_desc: "Weekly sessions via Zoom",
+    svc_prog_title: "4-Week Program",
+    svc_prog_desc: "Complete coaching",
+    contact_title: "Contact",
+    contact_note: "Book a trial session. I adapt to your routine.",
+    footer: "© 2026 Laia Mind — Universo Laia"
+  }
+};
+
+function applyLang(lang) {
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
