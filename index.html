@@ -1,39 +1,92 @@
-Skip to content
-yogabibds
-laia-mind
-Repository navigation
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Important update
-On April 24 we'll start using GitHub Copilot interaction data for AI model training unless you opt out. Review this update and manage your preferences in your GitHub account settings.
-Files
-Go to file
-t
-js content loaded
-assets
-css
-styles.css
-icons
-.testing
-icon-sphere-128.png
-icon-sphere-256.png
-icon-sphere-32.png
-icon-sphere-64.png
-img
-gallery
-yoga-1.svg
-yoga-2.svg
-yoga-3.svg
-yoga-4.svg
-hero.svg
-pfp.svg
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laia Mind — Yoga & Bem‑estar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrapper">
+      <strong class="brand-name">Laia Mind</strong>
+      <nav class="main-nav">
+        <a class="nav-link" href="#agenda" data-i18n="nav_agenda">Agenda</a>
+        <a class="nav-link" href="#servicos" data-i18n="nav_services">Serviços</a>
+        <a class="nav-link" href="#contato" data-i18n="nav_contact">Contato</a>
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="pt">PT</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="profile-card">
+            <img src="assets/img/pfp.jpg" alt="Gabi Barbosa" class="pfp">
+            <div>
+              <strong>Gabi Barbosa</strong>
+              <div class="small" style="color: var(--sage-green)">Yoga • Meditação • Respiração</div>
+            </div>
+          </div>
+          <h1 data-i18n="hero_title">Respire. Movimente. Integre.</h1>
+          <p class="lead" data-i18n="hero_sub">Práticas de yoga e meditação para aumentar foco, reduzir estresse e cultivar presença.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#agenda" data-i18n="hero_cta1">Ver agenda</a>
+            <a class="btn" href="#servicos" data-i18n="hero_cta2">Planos & Pacotes</a>
+          </div>
+        </div>
+        <div class="hero-image">
+           <div class="gallery-item" style="aspect-ratio: 4/3; width: 100%;">
+            <img src="assets/img/hero.jpg" alt="Laia Mind Hero">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2 class="h2" data-i18n="gallery_title">Galeria</h2>
+      <div class="gallery">
+        <div class="gallery-item"><img src="assets/img/gallery/yoga-1.jpg" alt="Yoga 1"></div>
+        <div class="gallery-item"><img src="assets/img/gallery/yoga-2.jpg" alt="Yoga 2"></div>
+        <div class="gallery-item"><img src="assets/img/gallery/yoga-3.jpg" alt="Yoga 3"></div>
+        <div class="gallery-item"><img src="assets/img/gallery/yoga-4.jpg" alt="Yoga 4"></div>
+      </div>
+    </section>
+
+    <section id="servicos" class="container section">
+      <h2 class="h2" data-i18n="services_title">Serviços</h2>
+      <div class="services-grid">
+        <div class="card">
+          <h3 data-i18n="svc_g_title">Aula em grupo</h3>
+          <p class="muted" data-i18n="svc_g_desc">Sessões semanais · Zoom</p>
+          <div class="price">ARS 6.000 / aula</div>
+        </div>
+        <div class="card highlight">
+          <h3 data-i18n="svc_prog_title">Programa 4 semanas</h3>
+          <p class="muted" data-i18n="svc_prog_desc">Acompanhamento completo</p>
+          <div class="price">ARS 120.000</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="container">
+      <span data-i18n="footer">© 2026 Laia Mind — Universo Laia</span>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</html>
 js
 main.js
 README.md
