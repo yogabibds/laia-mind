@@ -8,9 +8,11 @@ const STRINGS = {
     hero_cta1: "Ver agenda",
     hero_cta2: "Planos & Pacotes",
     gallery_title: "Galeria",
-    gallery_note: "Substitua os arquivos SVG por suas fotos reais.",
-    agenda_title: "Agenda",
     services_title: "Serviços",
+    svc_g_title: "Aula em grupo",
+    svc_g_desc: "Sessões semanais via Zoom",
+    svc_prog_title: "Programa 4 semanas",
+    svc_prog_desc: "Acompanhamento completo",
     contact_title: "Contato",
     contact_note: "Marque uma sessão experimental. Ajusto horários conforme sua rotina.",
     footer: "© 2026 Laia Mind — Universo Laia"
@@ -20,13 +22,15 @@ const STRINGS = {
     nav_services: "Servicios",
     nav_contact: "Contacto",
     hero_title: "Respira. Muévete. Integra.",
-    hero_sub: "Prácticas de yoga e meditación para foco, menos estrés y más presencia — online y presenciales.",
+    hero_sub: "Prácticas de yoga y meditación para foco, menos estrés y más presencia — online y presenciales.",
     hero_cta1: "Ver agenda",
     hero_cta2: "Planes y Paquetes",
     gallery_title: "Galería",
-    gallery_note: "Sustituye los archivos SVG por tus fotos reales.",
-    agenda_title: "Agenda",
     services_title: "Servicios",
+    svc_g_title: "Clase grupal",
+    svc_g_desc: "Sesiones semanales vía Zoom",
+    svc_prog_title: "Programa 4 semanas",
+    svc_prog_desc: "Seguimiento completo",
     contact_title: "Contacto",
     contact_note: "Reserva una sesión experimental. Ajusto horarios según tu rutina.",
     footer: "© 2026 Laia Mind — Universo Laia"
@@ -34,6 +38,42 @@ const STRINGS = {
   en: {
     nav_agenda: "Schedule",
     nav_services: "Services",
+    nav_contact: "Contact",
+    hero_title: "Breathe. Move. Integrate.",
+    hero_sub: "Yoga and meditation to increase focus, reduce stress and cultivate presence — online and in person.",
+    hero_cta1: "See schedule",
+    hero_cta2: "Plans & Packages",
+    gallery_title: "Gallery",
+    services_title: "Services",
+    svc_g_title: "Group Class",
+    svc_g_desc: "Weekly sessions via Zoom",
+    svc_prog_title: "4-Week Program",
+    svc_prog_desc: "Complete coaching",
+    contact_title: "Contact",
+    contact_note: "Book a trial session. I adapt to your routine.",
+    footer: "© 2026 Laia Mind — Universo Laia"
+  }
+};
+
+function applyLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (STRINGS[lang][key]) el.textContent = STRINGS[lang][key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+  localStorage.setItem('preferredLang', lang);
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  applyLang(localStorage.getItem('preferredLang') || 'pt');
+});
     nav_contact: "Contact",
     hero_title: "Breathe. Move. Integrate.",
     hero_sub: "Yoga and meditation to increase focus, reduce stress and cultivate presence — online and in person.",
