@@ -15,6 +15,7 @@ const STRINGS = {
     gallery_title: "Um espaço para respirar, mover e voltar para si",
 
     agenda_title: "Escolha sua prática",
+    agenda_sub: "Escolha a modalidade que melhor acompanha seu ritmo e seu momento.",
 
     services_title: "Aulas e programas",
 
@@ -56,6 +57,7 @@ const STRINGS = {
     gallery_title: "Un espacio para respirar, moverte y volver a ti",
 
     agenda_title: "Elige tu práctica",
+    agenda_sub: "Elige la modalidad que mejor acompaña tu ritmo y tu momento.",
 
     services_title: "Clases y programas",
 
@@ -97,6 +99,7 @@ const STRINGS = {
     gallery_title: "A space to breathe, move, and return to yourself",
 
     agenda_title: "Choose your practice",
+    agenda_sub: "Choose the format that best supports your rhythm and your moment.",
 
     services_title: "Classes and programs",
 
@@ -172,7 +175,7 @@ function applyLang(lang) {
   });
 
   document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+    btn.classList.toggle("active", btn.dataset.lang === lang);
   });
 
   renderAgenda(lang);
@@ -182,162 +185,10 @@ function applyLang(lang) {
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const lang = btn.getAttribute("data-lang");
-      applyLang(lang);
+      applyLang(btn.dataset.lang);
     });
   });
 
   const savedLang = localStorage.getItem("preferredLang") || "pt";
   applyLang(savedLang);
 });
-        <div class="lang-switcher">
-          <button type="button" class="lang-btn" data-lang="pt">PT</button>
-          <button type="button" class="lang-btn" data-lang="es">ES</button>
-          <button type="button" class="lang-btn" data-lang="en">EN</button>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="container hero">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <div class="profile-card">
-            <img src="assets/img/pfp.jpg" alt="Gabi Barbosa" class="pfp">
-            <div>
-              <strong>Gabi Barbosa</strong>
-              <div class="small profile-meta" data-i18n="profile_meta">Yoga • Meditação • Respiração</div>
-            </div>
-          </div>
-
-          <h1 data-i18n="hero_title">Sua pausa consciente começa aqui.</h1>
-
-          <p class="lead" data-i18n="hero_sub">
-            Aulas de yoga e meditação para reduzir o estresse, recuperar energia e voltar ao seu centro. Práticas online e presenciais com acompanhamento leve, humano e acessível.
-          </p>
-
-          <div class="cta-row">
-            <a
-              class="btn primary"
-              href="https://wa.me/5493413739528?text=Hola!%20Quiero%20reservar%20una%20clase%20de%20yoga."
-              target="_blank"
-              rel="noopener"
-              data-i18n="hero_cta1"
-            >
-              Reservar minha aula
-            </a>
-
-            <a class="btn" href="#servicos" data-i18n="hero_cta2">Ver opções</a>
-          </div>
-
-          <p class="small" style="margin-top:14px" data-i18n="hero_note">
-            Primeira conversa simples e sem complicação pelo WhatsApp.
-          </p>
-        </div>
-
-        <div class="hero-image">
-          <div class="hero-frame">
-            <img src="assets/img/hero.jpg" alt="Laiá Wellness Hero">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container section">
-      <h2 class="h2" data-i18n="gallery_title">Um espaço para respirar, mover e voltar para si</h2>
-
-      <div class="gallery">
-        <div class="gallery-item"><img src="assets/img/gallery/yoga-1.jpg" alt="Yoga 1"></div>
-        <div class="gallery-item"><img src="assets/img/gallery/yoga-2.jpg" alt="Yoga 2"></div>
-        <div class="gallery-item"><img src="assets/img/gallery/yoga-3.jpg" alt="Yoga 3"></div>
-        <div class="gallery-item"><img src="assets/img/gallery/yoga-4.jpg" alt="Yoga 4"></div>
-      </div>
-    </section>
-
-    <section id="agenda" class="container section">
-      <h2 class="h2" data-i18n="agenda_title">Escolha sua prática</h2>
-      <div id="agenda-list" class="schedule"></div>
-    </section>
-
-    <section id="servicos" class="container section">
-      <h2 class="h2" data-i18n="services_title">Aulas e programas</h2>
-
-      <div class="services-grid">
-        <div class="card">
-          <h3 data-i18n="svc_g_title">Aula em grupo</h3>
-          <p class="muted" data-i18n="svc_g_desc">
-            Ideal para começar com leveza, criar rotina e praticar em companhia.
-          </p>
-          <div class="price" data-i18n="svc_g_price">USD 4 / aula</div>
-        </div>
-
-        <div class="card">
-          <h3 data-i18n="svc_p_title">Sessão privada 1:1</h3>
-          <p class="muted" data-i18n="svc_p_desc">
-            Uma prática personalizada para seu momento, seu corpo e sua necessidade.
-          </p>
-          <div class="price" data-i18n="svc_p_price">USD 12 / sessão</div>
-        </div>
-
-        <div class="card highlight">
-          <h3 data-i18n="svc_prog_title">Programa 4 semanas</h3>
-          <p class="muted" data-i18n="svc_prog_desc">
-            Para quem quer consistência, acompanhamento e transformação real no dia a dia.
-          </p>
-          <div class="price" data-i18n="svc_prog_price">USD 83</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container section">
-      <div class="card highlight" style="text-align:center;">
-        <h2 class="h2" style="margin-bottom:12px;" data-i18n="offer_title">Comece com uma aula</h2>
-        <p class="muted" style="max-width:760px;margin:0 auto 20px;" data-i18n="offer_text">
-          Se você está buscando mais calma, foco e bem-estar, a melhor forma de começar é reservar sua primeira aula. Sem pressão, sem experiência prévia, no seu ritmo.
-        </p>
-        <a
-          class="btn primary"
-          href="https://wa.me/5493413739528?text=Hola!%20Quiero%20reservar%20mi%20primera%20clase."
-          target="_blank"
-          rel="noopener"
-          data-i18n="offer_cta"
-        >
-          Quero reservar minha primeira aula
-        </a>
-      </div>
-    </section>
-
-    <section id="contato" class="container section contact-section">
-      <h2 class="h2" data-i18n="contact_title">Vamos agendar?</h2>
-
-      <p class="contact-note" data-i18n="contact_note">
-        Me escreva e eu te ajudo a escolher a melhor prática para você. Você pode reservar sua aula pelo WhatsApp ou falar comigo por e-mail.
-      </p>
-
-      <div class="contact-actions">
-        <a
-          class="btn primary"
-          href="https://wa.me/5493413739528?text=Hola!%20Quiero%20reservar%20una%20clase%20de%20yoga."
-          target="_blank"
-          rel="noopener"
-        >
-          WhatsApp
-        </a>
-
-        <a class="btn" href="mailto:universolaia06@gmail.com">
-          universolaia06@gmail.com
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="foot">
-    <div class="container">
-      <span data-i18n="footer">© 2026 Laiá Wellness — Universo Laia</span>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
