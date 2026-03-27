@@ -1,7 +1,6 @@
 :root {
   --bg-dark: #1f2a24;
   --panel: #26352e;
-  --panel-soft: #2d3d36;
   --gold: #d6c6a5;
   --gold-strong: #bfa67a;
   --off-white: #f5f3ef;
@@ -11,9 +10,13 @@
   --container-width: 1100px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -41,6 +44,7 @@ a {
   padding: 0 20px;
 }
 
+/* HEADER */
 .topbar {
   position: sticky;
   top: 0;
@@ -56,6 +60,21 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line);
 }
 
 .brand-name {
@@ -79,8 +98,11 @@ a {
   transition: 0.25s ease;
 }
 
-.nav-link:hover { color: var(--off-white); }
+.nav-link:hover {
+  color: var(--off-white);
+}
 
+/* LANGUAGE SWITCHER */
 .lang-switcher {
   display: flex;
   gap: 4px;
@@ -109,11 +131,14 @@ a {
   opacity: 1;
 }
 
-.hero { padding: 80px 0 40px; }
+/* HERO */
+.hero {
+  padding: 80px 0 40px;
+}
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.05fr 0.95fr;
   gap: 42px;
   align-items: center;
 }
@@ -134,7 +159,9 @@ a {
   box-shadow: var(--shadow);
 }
 
-.profile-meta { color: var(--gold); }
+.profile-meta {
+  color: var(--gold);
+}
 
 h1 {
   margin: 0 0 18px;
@@ -193,7 +220,8 @@ h1 {
   border: 1px solid var(--line);
   background: var(--panel);
   box-shadow: var(--shadow);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
+  max-height: 420px;
 }
 
 .hero-frame img {
@@ -202,6 +230,7 @@ h1 {
   object-fit: cover;
 }
 
+/* SECTIONS */
 .section {
   padding: 72px 0;
   border-top: 1px solid var(--line);
@@ -213,19 +242,22 @@ h1 {
   font-weight: 800;
 }
 
+/* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
 }
 
 .gallery-item {
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
   background: var(--panel);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+  aspect-ratio: 4 / 3;
+  height: 180px;
+  transition: all 0.3s ease;
 }
 
 .gallery-item img {
@@ -235,8 +267,15 @@ h1 {
   transition: transform 0.45s ease;
 }
 
-.gallery-item:hover img { transform: scale(1.06); }
+.gallery-item:hover {
+  transform: translateY(-4px) scale(1.02);
+}
 
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* SCHEDULE */
 .schedule {
   display: grid;
   gap: 14px;
@@ -253,6 +292,7 @@ h1 {
   border: 1px solid var(--line);
 }
 
+/* SERVICES */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -272,7 +312,9 @@ h1 {
   border-color: rgba(214, 198, 165, 0.28);
 }
 
-.muted { color: var(--muted); }
+.muted {
+  color: var(--muted);
+}
 
 .price {
   margin-top: 14px;
@@ -286,7 +328,10 @@ h1 {
   color: var(--muted);
 }
 
-.contact-section { text-align: center; }
+/* CONTACT */
+.contact-section {
+  text-align: center;
+}
 
 .contact-note {
   max-width: 680px;
@@ -301,6 +346,7 @@ h1 {
   flex-wrap: wrap;
 }
 
+/* FOOTER */
 .foot {
   padding: 28px 0 40px;
   text-align: center;
@@ -308,25 +354,33 @@ h1 {
   border-top: 1px solid var(--line);
 }
 
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .nav-wrapper {
-    flex-direction: column;
-    justify-content: center;
-    padding: 14px 0;
+  .hero-grid {
+    grid-template-columns: 1fr;
   }
 
-  .hero-grid { grid-template-columns: 1fr; }
+  .hero-text {
+    text-align: center;
+  }
 
-  .hero-text { text-align: center; }
-
-  .profile-card, .cta-row { justify-content: center; }
+  .profile-card,
+  .cta-row {
+    justify-content: center;
+  }
 
   .lead {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item {
+    height: 160px;
+  }
 
   .item {
     flex-direction: column;
