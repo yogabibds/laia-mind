@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laiá Wellness — Yoga & Bem-estar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrapper">
+      <div class="brand-lockup">
+        <img src="assets/logo/logo-preview.png" alt="Laiá Wellness" class="brand-logo">
+        <strong class="brand-name">Laiá Wellness</strong>
+      </div>
+
+      <nav class="main-nav">
+        <a class="nav-link" href="#agenda" data-i18n="nav_agenda">Agenda</a>
+        <a class="nav-link" href="#servicos" data-i18n="nav_services">Serviços</a>
+        <a class="nav-link" href="#contato" data-i18n="nav_contact">Contato</a>
+
+        <div class="lang-switcher">
+          <button type="button" class="lang-btn" data-lang="pt">PT</button>
+          <button type="button" class="lang-btn" data-lang="es">ES</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="profile-card">
+            <img src="assets/img/pfp.jpg" alt="Gabi Barbosa" class="pfp">
+            <div>
+              <strong>Gabi Barbosa</strong>
+              <div class="small profile-meta" data-i18n="profile_meta">Yoga • Meditação • Respiração</div>
+            </div>
+          </div>
+
+          <h1 data-i18n="hero_title">Respire. Movimente. Integre.</h1>
+          <p class="lead" data-i18n="hero_sub">Práticas de yoga e meditação para aumentar foco, reduzir estresse e cultivar presença — online e presenciais.</p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="#agenda" data-i18n="hero_cta1">Ver agenda</a>
+            <a class="btn" href="#servicos" data-i18n="hero_cta2">Planos & Pacotes</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="hero-frame">
+            <img src="assets/img/hero.jpg" alt="Laiá Wellness Hero">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2 class="h2" data-i18n="gallery_title">Galeria</h2>
+      <div class="gallery">
+        <div class="gallery-item"><img src="assets/img/gallery/yoga-1.jpg" alt="Yoga 1"></div>
+        <div class="gallery-item"><img src="assets/img/gallery/yoga-2.jpg" alt="Yoga 2"></div>
+        <div class="gallery-item"><img src="assets/img/gallery/yoga-3.jpg" alt="Yoga 3"></div>
+        <div class="gallery-item"><img src="assets/img/gallery/yoga-4.jpg" alt="Yoga 4"></div>
+      </div>
+    </section>
+
+    <section id="agenda" class="container section">
+      <h2 class="h2" data-i18n="agenda_title">Agenda</h2>
+      <div id="agenda-list" class="schedule"></div>
+    </section>
+
+    <section id="servicos" class="container section">
+      <h2 class="h2" data-i18n="services_title">Serviços</h2>
+      <div class="services-grid">
+        <div class="card">
+          <h3 data-i18n="svc_g_title">Aula em grupo</h3>
+          <p class="muted" data-i18n="svc_g_desc">Sessões semanais via Zoom</p>
+          <div class="price" data-i18n="svc_g_price">USD 4 / aula</div>
+        </div>
+        <div class="card">
+          <h3 data-i18n="svc_p_title">Particular 1:1</h3>
+          <p class="muted" data-i18n="svc_p_desc">Plano personalizado</p>
+          <div class="price" data-i18n="svc_p_price">USD 12 / sessão</div>
+        </div>
+        <div class="card highlight">
+          <h3 data-i18n="svc_prog_title">Programa 4 semanas</h3>
+          <p class="muted" data-i18n="svc_prog_desc">Acompanhamento completo</p>
+          <div class="price" data-i18n="svc_prog_price">USD 83</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="container section contact-section">
+      <h2 class="h2" data-i18n="contact_title">Contato</h2>
+      <p class="contact-note" data-i18n="contact_note">Marque uma sessão experimental. Ajusto horários conforme sua rotina.</p>
+      <div class="contact-actions">
+        <a class="btn primary" href="https://wa.me/5493412280994" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="mailto:mind@universolaia.com">Email</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="container">
+      <span data-i18n="footer">© 2026 Laiá Wellness — Universo Laia</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
